@@ -14,8 +14,8 @@
 		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
 		<!-- aixo ho heu de canviar per les vostres dades -->
   		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/bang?createDatabaseIfNotExist=true</property>
-		<property name="hibernate.connection.username">root</property>
-		<property name="hibernate.connection.password">super3</property>
+		<property name="hibernate.connection.username">YOUR USER</property>
+		<property name="hibernate.connection.password">YOUR PASSWORD</property>
 		<!--Aquesta és important -->
 		<property name="hibernate.hbm2ddl.auto">create</property>
 		<!--Això ens permet cotillejar, però és opcional tenir-la a true -->
