@@ -1,0 +1,25 @@
+package dao;
+
+import org.hibernate.HibernateException;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+/*
+ * Singleton per crear la sessionFactory
+ */
+public class SessionManager {
+	private static SessionFactory sessionFactory;
+
+	public static synchronized SessionFactory getSessionFactory() {
+		if (sessionFactory == null) {
+			try {
+				sessionFactory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+			} catch (HibernateException e) {
+				System.err.println("Error al crear la SessionFactory: " + e.getMessage());
+				throw new ExceptionInInitializerError(e);
+			}
+		}
+		return sessionFactory;
+	}
+
+}

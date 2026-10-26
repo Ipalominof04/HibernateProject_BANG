@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<!-- SQL Dialect  Realment no cal, ja que hibernate el detecta automàticament
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		-->
+		<!-- Database Connection Settings -->
+		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<!-- aixo ho heu de canviar per les vostres dades -->
+  		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/bang?createDatabaseIfNotExist=true</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">super3</property>
+		<!--Aquesta és important -->
+		<property name="hibernate.hbm2ddl.auto">create</property>
+		<!--Això ens permet cotillejar, però és opcional tenir-la a true -->
+		<property name="show_sql">fa</property>
+		
+		<!-- Això formata les sentències SQL
+		<property name="hibernate.format_sql">true</property>
+		-->
+		<!-- Això afegeix comentaris a les sentències
+		<property name="hibernate.use_sql_comments">true</property>
+		-->
+		
+		<!-- Specifying Session Context -->
+		<property name="hibernate.current_session_context_class">org.hibernate.context.internal.ThreadLocalSessionContext</property>
+
+		<!-- AQUI POSEU LES CLASSES QUE REPRESENTEN TAULES QUE FEU SERVIR -->
+
+
+<mapping class="classes.Rol"/>
+<mapping class="classes.Carta"/>
+<mapping class="classes.CartaArma"/>
+<mapping class="classes.CartaEquipament"/>
+<mapping class="classes.CartaUs"/>
+<mapping class="classes.Jugador"/>
+<mapping class="classes.Partida"/>
+
+		
+	</session-factory>
+</hibernate-configuration>
